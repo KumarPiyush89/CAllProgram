@@ -1,0 +1,3 @@
+/*
+C program that will accept any character from user and print the ASCII of that character
+*/
