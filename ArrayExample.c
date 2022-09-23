@@ -1,33 +1,52 @@
-/*WRITE A CPROGRAM IN WHICH ACCEPT ANY TEN INTEGER NUMBERAND PRINT THE SUM OF ALL INTERED NUMBER
+/*
+C program to accept 10 numbers from user and print the smallest and largest number
 */
 #include<stdio.h>
+#include<process.h>
 int main()
 {
-	int n[10];
-	int sum;
-	printf("Enter 1st number:");
-	scanf("%d",&n[0]);
-	printf("Enter 2nd number:");
-	scanf("%d",&n[1]);
-	printf("Enter 3rdnumber:");
-	scanf("%d",&n[2]);
-	printf("Enter 4th number:");
-	scanf("%d",&n[3]);
-	printf("Enter 5th number:");
-	scanf("%d",&n[4]);
-	printf("Enter 6th number:");
-	scanf("%d",&n[5]);
-	printf("Enter 7th number:");
-	scanf("%d",&n[6]);
-	printf("Enter 8th number:");
-	scanf("%d",&n[7]);
-	printf("Enter 9th number:");
-	scanf("%d",&n[8]);
-	printf("Enter 10th number:");
-	scanf("%d",&n[9]);
-	sum=n[0]+n[1]+n[2]+n[3]+n[4]+n[5]+n[6]+n[7]+n[8]+n[9];
-	printf("\n sum of all  integer number is %d",sum);
-	return 0;
-	
-	
+    int numbers[10],i,largestNumber,smallestNumber;
+    printf("Wel Come");
+    //accept 10 numbers from user
+    for(i=0;i<10;i++)
+    {
+        printf("Enter number %d/10:",i+1);
+        scanf("%d",&numbers[i]);
+    }
+
+    //find largest number in list
+    //let the first number of list is largest number
+    largestNumber=numbers[0];
+    //now traverse the list from 1 to end and compare largestNumber from each element
+    for(i=1;i<10;i++)
+    {
+        if(numbers[i]>largestNumber)
+        {
+            //make  numbers[i] largest
+            largestNumber=numbers[i];
+        }
+    }
+
+//find the smallest number
+//let the first number is smallest
+smallestNumber=numbers[0];
+//now traverse the list from 1 to end and compare smallestNumber from each element of list
+for(i=1;i<10;i++)
+{
+    if(numbers[i]<smallestNumber)
+    {
+        smallestNumber=numbers[i];
+    }
+}
+
+
+//print all eneterd data
+printf("\nAll Entered numbers are:");
+for(i=0;i<10;i++)
+printf("%d, ",numbers[i]);
+
+printf("\nThe smallest number is %d and largest number is %d",smallestNumber,largestNumber);
+printf("\n");
+system("pause");
+    return 0;
 }
